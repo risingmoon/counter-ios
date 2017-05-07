@@ -5,6 +5,7 @@ A simple iOS counter app
 
 * button changes values
 * button readjusts width with decimal values
+* uses UserDefaults dictionary to track counter
 
 ## Ideas
 

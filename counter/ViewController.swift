@@ -10,13 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var number = 0
+    let defaults = UserDefaults.standard
     
     //MARK: Properties
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        defaults.set(0, forKey: "counter")
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,8 +27,8 @@ class ViewController: UIViewController {
 
     //MARK: Actions
     @IBAction func button(_ sender: UIButton) {
-        number += 1
-        sender.setTitle(String(number), for:.normal)
+        defaults.set(defaults.integer(forKey: "counter") + 1, forKey:"counter")
+        sender.setTitle(defaults.string(forKey: "counter"), for:.normal)
         sender.sizeToFit()
     }
 }
