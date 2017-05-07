@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let defaults = UserDefaults.standard
+    let defaults = UserDefaults(suiteName: "group.com.risingmoon.counter")!
     
     //MARK: Properties
 
@@ -27,8 +27,11 @@ class ViewController: UIViewController {
 
     //MARK: Actions
     @IBAction func button(_ sender: UIButton) {
-        defaults.set(defaults.integer(forKey: "counter") + 1, forKey:"counter")
-        sender.setTitle(defaults.string(forKey: "counter"), for:.normal)
+        var counter = defaults.integer(forKey: "counter")
+        counter += 1
+        defaults.set(counter, forKey:"counter")
+        defaults.synchronize()
+        sender.setTitle(String(counter), for:.normal)
         sender.sizeToFit()
     }
 }

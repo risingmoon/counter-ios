@@ -6,7 +6,9 @@ A simple iOS counter app
 * button changes values
 * button readjusts width with decimal values
 * uses UserDefaults dictionary to track counter
+* todays extention also works as counter
 
 ## Ideas
 
-* Make an iOS widget
+* holding gesture resets counter
+
